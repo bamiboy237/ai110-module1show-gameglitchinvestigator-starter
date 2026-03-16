@@ -25,13 +25,15 @@ It wrote the code, ran away, and now the game is unplayable.
 
 ## 📝 Document Your Experience
 
-- [ ] Describe the game's purpose.
-- [ ] Detail which bugs you found.
-- [ ] Explain what fixes you applied.
+- [x] Describe the game's purpose. This is a number guessing game built with Streamlit where you try to guess a secret number within a set number of attempts, with hints telling you whether to go higher or lower and a score that rewards you for guessing in fewer tries.
+
+- [x] Detail which bugs you found. The hint messages were swapped, that is when your guess was too high it told you to go higher and vice versa. The secret number was also being cast to a string on even-numbered attempts which broke numeric comparison entirely, for example "9" > "10" evaluates to True in Python string ordering. Hard mode had a range of 1–50 which was actually easier than Normal's 1–100. The new game button did not reset score, status, or history, so the game stayed in a won/lost state even after clicking it. The win formula also had an extra +1 that made the bonus collapse too fast, and wrong guesses on even attempts would sometimes award +5 points instead of deducting.
+
+- [x] Explain what fixes you applied. Swapped the hint messages in check_guess so "Too High" says "Go LOWER!" and "Too Low" says "Go HIGHER!". Removed the type-flip logic so the secret is always compared as an integer. Fixed the new game handler to reset all session state including score, status, and history, and to use the difficulty-based range instead of a hardcoded 1–100. Fixed the win formula by removing the extra +1 and simplified wrong-guess scoring to always deduct 5 points. Also refactored all core logic out of app.py into logic_utils.py to separate UI from game logic.
 
 ## 📸 Demo
 
-- [ ] [Insert a screenshot of your fixed, winning game here]
+- [ ] ![Demo of working app](<Screenshot 2026-03-15 at 9.41.38 PM.png>)
 
 ## 🚀 Stretch Features
 
