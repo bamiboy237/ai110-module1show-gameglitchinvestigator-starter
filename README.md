@@ -33,7 +33,7 @@ It wrote the code, ran away, and now the game is unplayable.
 
 ## 📸 Demo
 
-- [ ] ![Demo of working app](<Screenshot 2026-03-15 at 9.41.38 PM.png>)
+- [check] ![Demo of working app](<Screenshot 2026-03-15 at 9.41.38 PM.png>)
 
 ## 🚀 Stretch Features
 
